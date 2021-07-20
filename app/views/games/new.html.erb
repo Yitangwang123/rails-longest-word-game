@@ -1,0 +1,12 @@
+<h2>New games</h2>
+<p><%= @letters %></p>
+
+
+<form action="/score" method="GET">
+  <label for="">What is the longest word you can find?</label>
+  <input type="text" name="word">
+  <input type="submit" value="play">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= hidden_field_tag 'grid', @letters %>
+  <%= hidden_field_tag 'start', @start %>
+</form>
